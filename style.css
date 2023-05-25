@@ -9,8 +9,8 @@ main{
 }
 
 #counterDiv{
-    width: 70%;
-    margin: 50px auto;
+    width: 60%;
+    margin: 200px auto;
     display: flex;
     justify-content: space-between;
 }
