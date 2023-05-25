@@ -1,4 +1,4 @@
-function missingTimeFromNow(endDate){
+function missingTimeVariables(endDate){
 
     let missingTime = Date.parse(endDate) - Date.parse(new Date())
 
@@ -10,20 +10,27 @@ function missingTimeFromNow(endDate){
 
     let missingDays = Math.floor(missingTime / (1000 * 60 * 60 * 24))
 
-   return {
-
-    'missing time': missingTime,
-    
-    'missing seconds': missingSeconds,
-    
-    'missing minutes': missingMinutes,
-
-    'missing hours': missingHours,
-
-    'missing days': missingDays
-   }
+   return [missingTime,missingSeconds,missingMinutes,missingHours,missingDays ]
 }
 
-const missingTime = missingTimeFromNow('2023-05-26T09:30:00.000+01:00')
+const timeVariables = missingTimeVariables('2023-05-26T09:30:00.000+02:00')
 
-console.log(missingTime)
+const totalTimeMissing = timeVariables[0]
+
+const secondsMissing = timeVariables[1]
+
+const minutesMissing = timeVariables[2]
+
+const hoursMissing = timeVariables[3]
+
+const daysMissing = timeVariables[4]
+
+
+
+
+function lessonStarted(){
+
+    alert('FORZA ADESSO INIZIA LA LEZIONE')
+}
+
+
