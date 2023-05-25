@@ -10,10 +10,13 @@ function missingTimeInMilliseconds(endDate){
 
     let missingDays = Math.floor(missingTime / (1000 * 60 * 60 * 24))
    
-    return [missingDays, missingHours, missingMinutes, missingSeconds]
+    return [missingDays, missingHours, missingMinutes, missingSeconds, missingTime]
 }
 
 setInterval(missingTimeInMilliseconds, 1000, '2023-05-26T09:30:00.000+02:00')
+let timeFunction = missingTimeInMilliseconds('2023-05-26T09:30:00.000+02:00')
+
+let missingMilliseconds = timeFunction[4]
 
 let secondsSpan = document.querySelector('span.seconds')
     
@@ -50,15 +53,17 @@ function displayMissingTime(){
      daysSpan.innerHTML += missingDays  
 }
 
- 
 
-setInterval(displayMissingTime, 1000)
+let timer = setInterval(displayMissingTime, 1000)
+
 
 function lessonStarted(){
 
+    clearInterval(timer)
     alert('FORZA ADESSO INIZIA LA LEZIONE')
 }
 
+setTimeout(lessonStarted, missingMilliseconds)
 
 
 
