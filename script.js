@@ -28,9 +28,9 @@ let daysSpan = document.querySelector('span.days')
 
 let span = document.querySelectorAll('span')
 
-function displayMissingTime(){
+function displayMissingTime(endtime){
 
-     let missingTime = missingTimeInMilliseconds('2023-05-26T09:30:00.000+02:00')
+     let missingTime = missingTimeInMilliseconds(endtime)
 
      let missingDays = missingTime[0]
 
@@ -54,7 +54,7 @@ function displayMissingTime(){
 }
 
 
-let timer = setInterval(displayMissingTime, 1000)
+let timer = setInterval(displayMissingTime, 1000, '2023-05-26T09:30:00.000+02:00')
 
 
 function lessonStarted(){
